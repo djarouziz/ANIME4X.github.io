@@ -28,39 +28,20 @@
 <body>
     
 <html lang="en"{% edge "liquid" %} class="theme-{{ eleventy.edge.cookies.appearance | default: "auto" | escape }}"{% endedge %}>
-function setCookie(context, name, value) {
-  context.cookies.set({
-    name,
-    value,
-    path: "/",
-    httpOnly: true,
-    secure: true,
-    sameSite: "Lax",
-  });
-  
-}
-
-export default async (request, context) => {
-  let url = new URL(request.url);
-
-  // Save to cookie, redirect back to form
-  if(url.pathname === "/appearance/" && request.method === "POST") {
-    if(request.headers.get("content-type") === "application/x-www-form-urlencoded") {
-      let body = await request.text();
-      let postData = Object.fromEntries(new URLSearchParams(body));
-      setCookie(context, "appearance", postData.appearance);
-
-      return new Response(null, {
-        status: 302,
-        headers: {
-          location: url.pathname
-        }
-      });
-    }
-  }
-
-  return context.next();
-}
+<form-autosubmit>
+  <form action="{{ page.url }}">
+    <fieldset>
+      <legend>Appearance</legend>
+      {% edge %}
+      {% assign appearance = eleventy.edge.cookies.appearance | default: "auto" | escape %}
+      <label><input type="radio" name="appearance" value=""{% if appearance == "auto" %} checked{% endif %}>Auto (System Default)</label>
+      <label><input type="radio" name="appearance" value="dark"{% if appearance == "dark" %} checked{% endif %}>Dark</label>
+      <label><input type="radio" name="appearance" value="light"{% if appearance == "light" %} checked{% endif %}>Light</label>
+      {% endedge %}
+    </fieldset>
+    <button type="submit">Save</button>
+  </form>
+</form-autosubmit>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
