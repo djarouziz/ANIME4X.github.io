@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zxx">
-    <html lang="en"{% edge "liquid" %} class="theme-{{ eleventy.edge.cookies.appearance | default: "auto" | escape }}"{% endedge %}>
 <form-autosubmit>
   <form action="{{ page.url }}">
     <fieldset>
@@ -15,7 +14,7 @@
     <button type="submit">Save</button>
   </form>
 </form-autosubmit>
-
+<html lang="en"{% edge "liquid" %} class="theme-{{ eleventy.edge.cookies.appearance | default: "auto" | escape }}"{% endedge %}>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Anime X">
