@@ -1,20 +1,5 @@
 <!DOCTYPE html>
 <html lang="zxx">
-<form-autosubmit>
-  <form action="{{ page.url }}">
-    <fieldset>
-      <legend>Appearance</legend>
-      {% edge %}
-      {% assign appearance = eleventy.edge.cookies.appearance | default: "auto" | escape %}
-      <label><input type="radio" name="appearance" value=""{% if appearance == "auto" %} checked{% endif %}>Auto (System Default)</label>
-      <label><input type="radio" name="appearance" value="dark"{% if appearance == "dark" %} checked{% endif %}>Dark</label>
-      <label><input type="radio" name="appearance" value="light"{% if appearance == "light" %} checked{% endif %}>Light</label>
-      {% endedge %}
-    </fieldset>
-    <button type="submit">Save</button>
-  </form>
-</form-autosubmit>
-<html lang="en"{% edge "liquid" %} class="theme-{{ eleventy.edge.cookies.appearance | default: "auto" | escape }}"{% endedge %}>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Anime X">
