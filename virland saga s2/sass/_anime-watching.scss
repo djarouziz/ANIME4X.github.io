@@ -14,7 +14,17 @@
   .plyr video {
     width: 105%;
   }
+  iframe {
+    border: 1px solid rgb(241, 14, 14);
+    width: 100%; /* takes precedence over the width set with the HTML width attribute */
+}
+iframe:focus {
+  outline: none;
+}
 
+iframe[seamless] {
+  display: block;
+}
   .plyr--full-ui.plyr--video .plyr__control--overlaid {
     display: block;
   }
