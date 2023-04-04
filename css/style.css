@@ -456,7 +456,7 @@ ol {
 }
 
 .hero__text .label {
-	font-size: 13px;
+	font-size: 17px;
 	color: #e53637;
 	background: #ffffff;
 	padding: 5px 14px 3px;
@@ -579,7 +579,7 @@ ol {
 	background: #0b0c2a;
 	line-height: 66px;
 	text-align: center;
-	color: #ffffff;
+	color: #e53637;
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
@@ -603,7 +603,7 @@ ol {
 	right: 0;
 	height: 54px;
 	width: 54px;
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(231, 113, 113, 0.123);
 	content: "";
 	z-index: -1;
 	margin: 0 auto;
@@ -2179,7 +2179,7 @@ ol {
 	}
 	.slicknav_btn {
 		border-radius: 0;
-		background-color: #222;
+		background-color: #e53637;
 		position: absolute;
 		right: 0;
 		top: 9px;
