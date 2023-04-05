@@ -30,6 +30,18 @@
 </head>
 
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+    function our(){
+        Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'انت غير مسجل يجب عليك التسجيل',
+  footer: '<a href="">Why do I have this issue?</a>'
+})
+}
+</script>
+
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -110,7 +122,7 @@
                                 <input type="text" placeholder="Password">
                                 <span class="icon_lock"></span>
                             </div>
-                            <button type="submit" class="site-btn">Login Now</button>
+                            <button onclick="our();" type="submit" class="site-btn">Login Now</button>
                         </form>
                         <a href="#" class="forget_pass">Forgot Your Password?</a>
                     </div>
